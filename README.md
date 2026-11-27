@@ -19,7 +19,7 @@ Coming from testing, writing the tests first (TDD) felt natural, so that's how I
 | FastAPI app (`/health`, `/tasks`) | Done |
 | Automated tests (pytest, 7 tests) | Done |
 | GitHub Actions CI (Python 3.11 and 3.12) | Done |
-| Automated dependency updates (Dependabot) | To do |
+| Automated dependency updates (Dependabot) | Done |
 | Azure DevOps pipeline | To do |
 | Docker containerization | Planned (next project) |
 
