@@ -1,6 +1,7 @@
 # task-api-cicd
 
 [![CI](https://github.com/Atemkeng23/task-api-cicd/actions/workflows/ci.yml/badge.svg)](https://github.com/Atemkeng23/task-api-cicd/actions/workflows/ci.yml)
+[![Build Status](https://dev.azure.com/atemkengDevops/task-api-cicd/_apis/build/status%2FAtemkeng23.task-api-cicd?branchName=main)](https://dev.azure.com/atemkengDevops/task-api-cicd/_build/latest?definitionId=1&branchName=main)
 ![Python](https://img.shields.io/badge/python-3.11%20|%203.12-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -20,7 +21,7 @@ Coming from testing, writing the tests first (TDD) felt natural, so that's how I
 | Automated tests (pytest, 7 tests) | Done |
 | GitHub Actions CI (Python 3.11 and 3.12) | Done |
 | Automated dependency updates (Dependabot) | Done |
-| Azure DevOps pipeline | To do |
+| Azure DevOps pipeline | Done |
 | Docker containerization | Planned (next project) |
 
 ## Prerequisites
@@ -74,6 +75,8 @@ The workflow `.github/workflows/ci.yml` runs on every push to `main` and on ever
 
 The first runs showed a Node 20 deprecation warning, so I updated the actions to versions that run on Node 24.
 
+The same checks also run on Azure DevOps, defined in `azure-pipelines.yml`: a Microsoft-hosted Ubuntu agent, the same Python 3.11 and 3.12 matrix, and the JUnit report published to the Tests tab. Building the same pipeline twice was a good way to compare the two tools. A GitHub workflow and its jobs map to an Azure pipeline and its jobs, both use `matrix`, and `PublishTestResults` plays the role of the artifact upload.
+
 ## Repository structure
 
 ```text
@@ -86,6 +89,7 @@ The first runs showed a Node 20 deprecation warning, so I updated the actions to
 ├── .github/
 │   └── workflows/
 │       └── ci.yml           # CI pipeline
+├── azure-pipelines.yml      # Azure DevOps pipeline
 ├── pytest.ini
 ├── requirements.txt
 ├── LICENSE
