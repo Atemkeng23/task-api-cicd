@@ -8,6 +8,8 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 - Dependabot configuration for pip and GitHub Actions.
 - CONTRIBUTING and SECURITY documents.
+- Azure DevOps pipeline (`azure-pipelines.yml`) running the tests on Python 3.11 and 3.12.
+- Branch protection on `main`: pull request and green checks required.
 
 ## [1.0.0] - 2026-11-27
 
